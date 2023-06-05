@@ -1,0 +1,36 @@
+<%- include('layout/header')%>
+
+    <div class=" center-div" id="login">
+        <div class="container w-25 border py-4 my-5">
+            <div class="text-center title pb-5 ">
+                <h2 class="font-weight-bold">Edit user(<%= user.name %>)</h2>
+            </div>
+            <form action="/update/<%= user._id %>"  method="post" id="add-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name='name' value="<%= user.name %>" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" name='email' value="<%= user.email %>" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">phone number</label>
+                    <input type="number" class="form-control"  name='phone' value="<%= user.phone %>" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Select image</label>
+                    <input type="file" class="form-control" name="image" aria-describedby="emailHelp">
+                    <img src="/<%= user.image %>" alt="" width="100" class="img-thumbnail mt-1" >
+                    <input type="hidden" name="old_image" value="<%= user.image %>">
+                </div>
+                
+                <button type="submit" name="submit" class="btn btn-success">update</button>
+            </form>
+        </div>
+    </div>
+
+    <%- include('layout/footer')%>
