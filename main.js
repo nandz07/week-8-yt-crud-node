@@ -49,5 +49,5 @@ app.use("",require('./routes/routes'))
 // })
 
 app.listen(PORT,()=>{
-    console.log(`server started at http://localhost/${PORT}`);
+    console.log(`server started at http://localhost:${PORT}`);
 })
